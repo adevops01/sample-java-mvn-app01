@@ -32,4 +32,10 @@ pipeline {
             }
         }
     }
+
+    post {
+     success {
+        build job: 'cd-job', parameters: []
+        }
+    }
 }
