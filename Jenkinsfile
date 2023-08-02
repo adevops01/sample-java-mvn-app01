@@ -1,6 +1,10 @@
 pipeline {
     agent any
-
+    
+    environment { 
+        DOCKER_CRED = credentials('docker')
+      }
+    
     stages {
         
         stage('Clone') {
@@ -21,8 +25,9 @@ pipeline {
             }
         }
 
-        stage('Upload to Jfrog'){
+        stage('Upload to DockerHub'){
             steps {
+                sh "docker login -u ${DOCKER_CRED_USR} -p ${DOCKER_CRED_PSW}"  
                 sh 'docker push moshab679/myapp:23.v1'
             }
         }
