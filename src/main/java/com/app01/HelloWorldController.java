@@ -12,4 +12,10 @@ public class HelloWorldController {
     public String helloWorld() {
         return "Hello, World!";
     }
+
+    @GetMapping("/helloworld")
+    @ResponseBody
+    public String helloWorld() {
+        return "Microservice Hello, World!";
+    }
 }
