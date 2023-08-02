@@ -15,7 +15,7 @@ public class HelloWorldController {
 
     @GetMapping("/helloworld")
     @ResponseBody
-    public String helloWorld() {
+    public String michelloWorld() {
         return "Microservice Hello, World!";
     }
 }
