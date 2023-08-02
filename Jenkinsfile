@@ -8,12 +8,12 @@ pipeline {
                 git 'https://github.com/adevops01/sample-java-mvn-app01.git'
             }
         }
-
-        stage('Build') {
-            steps {
-                mvn install
-            }
-        }
+// Building insdie the container directly
+        // stage('Build') {
+        //     steps {
+        //         mvn install
+        //     }
+        // }
 
         stage('Containerized'){
             steps{
